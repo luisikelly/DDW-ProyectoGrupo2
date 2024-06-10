@@ -1,0 +1,282 @@
+body {
+background-color: #F5F5F5;
+margin: 0; /* Eliminar margen predeterminado del cuerpo */
+font-family: "letra", sans-serif; /* Aplica la fuente "letra" a todo el cuerpo del documento */
+}
+
+header{
+    background-color: rgb(255, 255, 255);
+    width: 100%; /* Ancho completo */
+    overflow: hidden;
+    padding: 0px; /* Añadido espacio alrededor de la barra de navegación */
+}
+
+.barra {
+    display: flex; /* Utilizamos flexbox para alinear elementos */
+    align-items: center; /* Centramos verticalmente los elementos */
+    justify-content: space-between; /* Espacio uniforme entre los elementos */
+}
+
+.izquierda{
+    display: flex;
+    align-items: left;
+}
+
+.izquierda h1{
+    color:#767272;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 50px;
+    
+}
+
+.barra img {
+    height: 70px; /* Altura del logo */
+    padding: 10px; /* Espaciado alrededor del logo */
+}
+.hamburger {
+    display: none;
+}
+
+.botones{
+    display: flex;
+    align-items: right;
+    line-height: 50px;
+    color:#F5F5F5;
+    font-size:30 px ; /* Tamaño del botón */
+    align-items:center; /* Centramos verticalmente los elementos */
+}
+
+
+.nav-link-green {
+    display: flex;
+    background-color: rgba(103, 190, 155, 0.8);
+    border-radius: 15px; /* Borde redondeado individual para cada botón */
+    /*margin-bottom: 10px; /* Agregado espacio inferior para evitar superposiciones */
+    margin-right: 10px; /* Modificado para un mejor ajuste en dispositivos móviles */
+    padding: 10px 20px; /* Establece el relleno del botón */
+    height: 30px;
+    align-items:center; /* Centramos verticalmente los elementos */
+    box-shadow: 0 2px 4px #00000094; /* Sombra con color blanco */
+}
+
+.nav-link-yellow {
+    display: flex;
+    background-color: rgba(241, 219, 66, 0.8);
+    border-radius: 15px; /* Borde redondeado individual para cada botón */
+    /*margin-bottom: 10px; /* Agregado espacio inferior para evitar superposiciones */
+    margin-right: 10px; /* Modificado para un mejor ajuste en dispositivos móviles */
+    padding: 10px 20px; /* Establece el relleno del botón */
+    height: 30px;
+    align-items:center; /* Centramos verticalmente los elementos */
+    justify-content: center;
+    box-shadow: 0 2px 4px #00000094; /* Sombra con color blanco */
+}
+
+.nav-link-red {
+    display: flex;
+    background-color: rgba(240, 65, 88, 0.8);
+    border-radius: 15px; /* Borde redondeado individual para cada botón */
+    /*margin-bottom: 10px; /* Agregado espacio inferior para evitar superposiciones */
+    margin-right: 10px; /* Modificado para un mejor ajuste en dispositivos móviles */
+    padding: 10px 20px; /* Establece el relleno del botón */
+    height: 30px;
+    align-items:center; /* Centramos verticalmente los elementos */
+    justify-content: center;
+    box-shadow: 0 2px 4px #00000094; /* Sombra con color blanco */
+
+}
+
+.nav-link-green,
+.nav-link-yellow, 
+.nav-link-red {
+    font-weight:bolder;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+main {
+    flex: 1; /* El contenedor principal toma todo el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Ajusta la altura según sea necesario */
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    z-index: -1; /* Para que la imagen de fondo esté detrás del contenido */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.titulo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(92, 91, 91, 0.65);
+    padding: 5px 5px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center; /* Centra el texto horizontalmente */
+    z-index: 1; /* Asegura que el título esté delante de la imagen */
+}
+
+.Card {
+    background-color: #95D0B8;
+    display: flex; /* Utiliza flexbox para alinear imágenes horizontalmente */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    border-radius: 20px; /* Borde redondeado */
+    padding: 20px; /* Añade espacio interno */
+    margin: 20px 0; /* Añade margen arriba y abajo */
+    width: 90%; /* Ancho del divisor */
+    max-width: 1400px; /* Máximo ancho para centrado en grandes pantallas */
+    box-sizing: border-box; /* Incluye el padding en el ancho */
+    overflow: hidden; /* Oculta el contenido que desborda del divisor */
+    color: #ffffff;
+    align-items: center;
+}
+
+.infoTitle {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 40px; /* Ajustar el tamaño de la letra si es necesario */
+}
+
+.projectCard {
+    margin: 10px 10px; /* Añade margen arriba y abajo */
+    display: flex; /* Utiliza flexbox para alinear imágenes horizontalmente */
+    flex-direction: row; /* Mantiene los elementos en una fila */
+    overflow: hidden; /* Oculta el contenido que desborda del divisor */
+}
+
+.projectCard .info {
+    font-size: 30px; /* Ajustar el tamaño de la letra si es necesario */
+    align-items: center;
+}
+
+.projectCard .logo-container {
+    display: flex; /* Utiliza flexbox para alinear imágenes horizontalmente */
+    align-items: center;
+    justify-content: center;
+}
+
+.projectCard .logo-container img {
+    max-width: 400px; /* Máximo ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        background-color: transparent;
+        left: 0;
+        top: 0;
+        height: 30px;
+        width: 30px;
+        padding: 20px 20px;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-transition: -webkit-transform 0.25s
+          cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        z-index: 1002;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .hamburger.is-active {
+        background-color: none;
+      }
+      ._layer {
+        margin-bottom: 4px;
+        border-radius: 2px;
+        width: 28px;
+        height: 4px;
+        opacity: 1;
+      }
+      .-top{
+        background-color: #67be9b;
+      }
+      .-mid{
+        background-color: #f1db42;
+      }
+
+      .-bottom{
+        background-color: #f04158;
+      }
+
+      .menuppal.is_active {
+        transform: translate3d(0px, 0px, 0px);
+      }
+      .menuppal {
+        display: flex;
+        background-color: #fcfcd7;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        transform: translate3d(0px, -100%, 0px);
+        transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+        width: 100%;
+        z-index: 1001;
+      }
+      .botones {
+        flex-direction: column;
+        align-items: center;
+        justify-content: top;
+        margin: 35%;
+        padding: 0;
+      }
+      .menuppal ul li {
+        list-style: none;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 3em;
+        height: 3em;
+        color: #ffffff;
+        text-transform: none;
+        font-weight: bold;
+    }
+    .projectCard {
+        flex-direction: column; /* Cambia la dirección del flex a columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
+    .infoTitle{
+        font-size: 30px;
+        margin-bottom: 2px;
+    }
+    .info p{
+        font-size: 20px;
+    }
+    .logoUADE{
+        width: 200px;
+        height: auto;
+    }
+}
+
+footer {
+    background-color: #67BE9B;
+    text-align: center; /* Centrar el texto horizontalmente */
+    padding: 5px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Añadir una ligera sombra para la separación visual */
+    width: 100%; /* Asegura que el footer ocupe el ancho completo */
+    font-size: 14px; /* Ajustar el tamaño de la letra si es necesario */
+    opacity: 0.75; /* Ajusta el nivel de transparencia según tu preferencia */
+    color: #ffffff;
+}
