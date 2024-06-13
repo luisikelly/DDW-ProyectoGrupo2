@@ -1,0 +1,141 @@
+body {
+    background-color: #F5F5F5;
+    margin: 0; /* Eliminar margen predeterminado del cuerpo */
+    font-family: Kanit, sans-serif; /* Aplica la fuente "letra" a todo el cuerpo del documento */
+}
+    
+header{
+    background-color: rgb(255, 255, 255);
+    width: 100%; /* Ancho completo */
+    overflow: hidden;
+    padding: 0px; /* Añadido espacio alrededor de la barra de navegación */
+}
+    
+.barra {
+    display: flex; /* Utilizamos flexbox para alinear elementos */
+    align-items: center; /* Centramos verticalmente los elementos */
+    justify-content: space-between; /* Espacio uniforme entre los elementos */
+}
+    
+.izquierda{
+    display: flex;
+    align-items: left;
+}
+    
+.izquierda h1{
+    color:#767272;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 50px;
+}
+    
+.barra img {
+    height: 70px; /* Altura del logo */
+    padding: 10px; /* Espaciado alrededor del logo */
+}
+    
+.botones{
+    display: flex;
+    align-items: right;
+    line-height: 50px;
+    color:#F5F5F5;
+    font-size:30 px ; /* Tamaño del botón */
+    align-items:center; /* Centramos verticalmente los elementos */
+}
+
+.nav-link-red {
+    display: flex;
+    background-color: rgba(240, 65, 88, 0.8);
+    border-radius: 15px; /* Borde redondeado individual para cada botón */
+    /*margin-bottom: 10px; /* Agregado espacio inferior para evitar superposiciones */
+    margin-right: 10px; /* Modificado para un mejor ajuste en dispositivos móviles */
+    padding: 10px 20px; /* Establece el relleno del botón */
+    height: 30px;
+    align-items:center; /* Centramos verticalmente los elementos */
+    justify-content: center;
+    box-shadow: 0 2px 4px #00000094; /* Sombra con color blanco */
+    font-weight:bolder;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+main {
+    flex: 1; /* El contenedor principal toma todo el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    background-color:#F5F5F5; ;
+}
+
+.contenedor_de_juego{
+    background-color: #95D0B8;
+    display: flex; /* Utiliza flexbox para alinear imágenes horizontalmente */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    border-radius: 20px; /* Borde redondeado */
+    padding: 20px; /* Añade espacio interno */
+    width: 90%; /* Ancho del divisor */
+    max-width: 1400px; /* Máximo ancho de cada tarjeta */
+    box-sizing: border-box; /* Incluye el padding en el ancho */
+    overflow: hidden; /* Oculta el contenido que desborda del divisor */
+    color: #ffffff;
+    align-items: center;
+    margin: 10px; /* Añade margen alrededor de cada tarjeta */
+    text-align: center;
+    font-size: 30px;
+}
+
+.signal-image{
+    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+    height: 300px; /* Mantiene la proporción de la imagen */
+    margin-bottom: 10px; /* Añade espacio debajo de la imagen */
+    border-radius: 50px; /* Bordes redondeados para la imagen */
+}
+
+.correct-answer {
+    border: 5px solid green;
+}
+
+.incorrect-answer {
+    border: 5px solid red;
+}
+
+/* Estilos existentes */
+
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1000; /* Colocar encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilitar scroll si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo */
+    background-color: rgba(0,0,0,0.4); /* Fondo con transparencia */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centrar verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* Ancho máximo */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
