@@ -1,7 +1,7 @@
 body {
     background-color: #F5F5F5;
     margin: 0; /* Eliminar margen predeterminado del cuerpo */
-    font-family: "letra", sans-serif; /* Aplica la fuente "letra" a todo el cuerpo del documento */
+    font-family: Kanit, sans-serif; /* Aplica la fuente "letra" a todo el cuerpo del documento */
 }
     
 header{
