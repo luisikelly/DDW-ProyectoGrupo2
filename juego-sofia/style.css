@@ -1,3 +1,4 @@
+/* Estilos Globales */
 body {
     background-color: #FCFCD7;
     margin: 0;
@@ -15,11 +16,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos se reorganicen en varias líneas */
 }
 
 .izquierda {
     display: flex;
-    align-items: left;
+    align-items: center;
 }
 
 .izquierda h1 {
@@ -29,9 +31,11 @@ header {
     line-height: 50px;
     white-space: nowrap; /* Prevenir el salto de línea por defecto */
 }
+
 .parte1, .parte2 {
     display: inline; /* Mantiene el texto en línea por defecto */
 }
+
 .barra img {
     height: 70px;
     padding: 10px;
@@ -47,6 +51,7 @@ header {
     color: #F5F5F5;
     font-size: 30px;
     align-items: center;
+    flex-wrap: wrap; /* Permite la reorganización en líneas múltiples */
 }
 
 .nav-link-green {
@@ -62,6 +67,7 @@ header {
     color: #ffffff;
     font-size: 20px;
     text-decoration: none;
+    flex-wrap: wrap; /* Permite la reorganización en líneas múltiples */
 }
 
 main {
@@ -69,21 +75,21 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    padding: 20px; /* Espacio alrededor del contenido principal */
 }
+
 .hidden {
     display: none;
 }
 
-
-
 .tablero {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     max-width: 600px; /* Ancho máximo para el tablero */
+    width: 100%; /* Ajuste al 100% del contenedor */
     margin: auto;
-    margin-right: 410px;
     margin-top: 1%;
+    padding: 0 10px; /* Espaciado alrededor del tablero */
 }
 
 .encabezado {
@@ -95,13 +101,12 @@ main {
     align-items: center;
     flex-direction: column;
     min-width: 300px;
-    width: 70%;
-    padding: 2% 2%;
-    margin: 5px 10px;
-    margin-left: 25px;
+    width: 100%; /* Ajuste al 100% del contenedor */
+    max-width: 600px; /* Ancho máximo */
+    padding: 20px;
+    margin: 10px;
     border-radius: 15px;
     text-align: center; /* Alineación centrada para el texto */
-
 }
 
 .pregunta {
@@ -110,7 +115,7 @@ main {
 }
 
 .imagen {
-    max-width: 80%;
+    max-width: 100%; /* Ajuste al 100% del contenedor */
     height: auto;
     margin-top: 10px;
     border-radius: 25px;
@@ -122,15 +127,14 @@ main {
     width: 100%;
     max-width: 390px;
     padding: 4%;
-    margin: 10px;
+    margin: 10px auto; /* Centra los botones horizontalmente */
     border-radius: 15px;
     display: flex;
     color: hsl(0, 11%, 22%);
     font-size: medium;
     box-shadow: 0 2px 4px #00000094;
-    justify-content: left; /* Centrar el texto del botón */
+    justify-content: left; /* Alinea el texto a la izquierda */
     text-align: left;
-    margin-left: 25px;
 }
 
 .btn:hover {
@@ -148,49 +152,71 @@ main {
     font-size: 15px;
 }
 
-    @media (max-width: 768px) {
-        .izquierda {
-            align-items: center; /* Centrar elementos */
-            text-align: center;
-        }
-        .izquierda h1 {
-            font-size: 18px; /* Ajusta el tamaño del texto */
-        }
-        .parte1, .parte2 {
-            display: block; /* Cambia a bloque para que se apilen */
-        }
-        .parte1{
-            margin-left: 20px;
-        }
-        .parte2 {
-            margin-top: 1px; /* Ajusta el margen superior si es necesario */
-        }
-        header{
-            width: 95.9%;
-        }
-        main{
-            display: flex;
-        }
-        .tablero{
-            margin-right: 5px;
-        }
-
-        .encabezado{
-            margin-left: 55px;
-        }
-        .footer {
-            align-items: center;
-            text-align: center;
-            font-size: 10px;
-            width: 95.9%;
-        }
-        .footer p{
-            text-align: center;
-            margin-left: -2%;
-        }
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .izquierda {
+        align-items: center; /* Centrar elementos */
+        text-align: center;
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 10px;
     }
 
+    .izquierda h1 {
+        font-size: 18px; /* Ajusta el tamaño del texto */
+    }
 
+    .parte1, .parte2 {
+        display: block; /* Cambia a bloque para que se apilen */
+    }
 
+    .barra {
+        flex-direction: column; /* Disposición en columna para elementos de la barra */
+        align-items: center;
+    }
+
+    .barra img {
+        height: 50px; /* Ajustar el tamaño de la imagen en pantallas pequeñas */
+    }
+
+    .botones {
+        font-size: 20px;
+        margin-top: 10px;
+        flex-direction: column; /* Disposición en columna para los botones */
+        align-items: center;
+    }
+
+    .nav-link-green {
+        margin: 10px 0; /* Espaciado alrededor de los botones */
+        padding: 10px 15px; /* Ajustar el padding */
+        font-size: 16px; /* Ajustar el tamaño de la fuente */
+    }
+
+    main {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .tablero {
+        margin-right: 0; /* Ajusta el margen */
+        padding: 0;
+        max-width: 100%; /* Ancho completo */
+    }
+
+    .encabezado {
+        margin-left: 0; /* Ajusta el margen */
+        width: 100%; /* Ancho completo */
+        padding: 10px;
+        max-width: 100%; /* Ancho completo */
+    }
+
+    .btn {
+        margin: 10px auto; /* Centra los botones horizontalmente */
+    }
+
+    .footer {
+        font-size: 12px; /* Tamaño de fuente más pequeño */
+        padding: 10px 5px; /* Reduce padding */
+    }
+}
 
     
