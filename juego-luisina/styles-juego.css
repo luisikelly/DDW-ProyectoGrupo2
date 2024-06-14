@@ -1,0 +1,186 @@
+body {
+    background-color: #F5F5F5;
+    margin: 0; /* Eliminar margen predeterminado del cuerpo */
+    font-family: Kanit, sans-serif; /* Aplica la fuente "letra" a todo el cuerpo del documento */
+}
+    
+header{
+    width: 100%; /* Ancho completo */
+    overflow: hidden;
+    padding: 0px; /* Añadido espacio alrededor de la barra de navegación */
+}
+
+#wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+ }
+ 
+ #game {
+    height: 100vh;
+    max-height: 700px;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ #stats {
+    color:#67BE9B;
+    position: absolute;
+    padding: 1rem;
+    text-align: center;
+    width: calc(100% - 2rem);
+    font-size: 2rem;
+ }
+ 
+ .barra {
+    background-color: #ffffff;
+    display: flex; /* Utilizamos flexbox para alinear elementos */
+    align-items: center; /* Centramos verticalmente los elementos */
+    justify-content: space-between; /* Espacio uniforme entre los elementos */
+    height: 70px;
+}
+    
+.izquierda{
+    display: flex;
+    align-items: left;
+}
+    
+.izquierda h1{
+    color:#767272;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 50px;
+}
+    
+.barra img {
+    height: 50px; /* Altura del logo */
+    padding: 10px; /* Espaciado alrededor del logo */
+}
+
+    
+.botones{
+    display: flex;
+    align-items: right;
+    line-height: 50px;
+    color:#F5F5F5;
+    font-size:25 px ; /* Tamaño del botón */
+    align-items:center; /* Centramos verticalmente los elementos */
+}
+    
+.nav-link-red {
+    display: flex;
+    background-color: rgba(240, 65, 88, 0.8);
+    border-radius: 15px; /* Borde redondeado individual para cada botón */
+    /*margin-bottom: 10px; /* Agregado espacio inferior para evitar superposiciones */
+    margin-right: 10px; /* Modificado para un mejor ajuste en dispositivos móviles */
+    padding: 10px 20px; /* Establece el relleno del botón */
+    height: 20px;
+    align-items:center; /* Centramos verticalmente los elementos */
+    justify-content: center;
+    box-shadow: 0 2px 
+    4px #00000094; /* Sombra con color blanco */
+}
+    
+.nav-link-red a {
+    font-weight:bolder;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+
+}
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Ajusta la altura según sea necesario */
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    z-index: -1; /* Para que la imagen de fondo esté detrás del contenido */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.titulo {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(92, 91, 91, 0.65);
+    padding: 5px 50px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center; /* Centra el texto horizontalmente */
+    z-index: 1; /* Asegura que el título esté delante de la imagen */
+}
+
+.barra-juego{
+    border:4px solid #67BE9B;
+    
+}
+
+.espacio-juego{
+    background-color: #fcfcd7;
+    width: 100%;
+    height: 500px;
+}
+
+ .card {
+    width: 100px;
+    height: 140px;
+    margin: 1rem;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+ }
+ 
+ .card.active {
+    transform: rotateY(180deg);
+ }
+ 
+ .card div {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    pointer-events: none;
+ }
+ 
+ .card .face {
+    background: #05d1fe;
+    transform: rotateY( 180deg );
+    color: black;
+    font-size: 6rem;
+ }
+ 
+ .card .back {
+    border: 3px solid #05d1fe;
+    background: url(images/back.png) center / contain no-repeat;
+ }
+
+footer {
+    background-color: #67BE9B;
+    text-align: center; /* Centrar el texto horizontalmente */
+    padding: 5px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Añadir una ligera sombra para la separación visual */
+    width: 100%; /* Asegura que el footer ocupe el ancho completo */
+    font-size: 14px; /* Ajustar el tamaño de la letra si es necesario */
+    opacity: 0.75; /* Ajusta el nivel de transparencia según tu preferencia */
+    color: #ffffff;
+}
