@@ -17,10 +17,18 @@
                 <img src="img/logo.png" alt="logo">
                 <h1>Joystick Seguro</h1>
             </div>
-            <ul class="botones">
-                <li class="nav-link-red"><a href="index-juego.html" target="_self">Volver</a></li>
-            </ul>
-
+            <p class="score-title">Puntaje: <span class="score"></span></p>
+            <div class="hamburger">
+                <div class="_layer -top"></div>
+                <div class="_layer -mid"></div>
+                <div class="_layer -bottom"></div>
+            </div>
+            <div class="menuppal">
+                <ul class="botones">
+                    <li class="actions"><button onclick="restart()">Reiniciar</button></li>
+                    <li class="nav-link-red"><a href="index-juego.html" target="_self">Volver</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <main>
@@ -33,12 +41,15 @@
         </div>
         <div class="barra-juego"></div>
         <div class="espacio-juego">
-                         
+            <div class="grid-container">
+            </div>
+            
+            
         </div>
     </main>
     <footer> 
         <p>Derechos reservados - Sitio desarrollado para uso educativo - Diseño y desarrollo Web - UADE - 2024</p>
     </footer>
-    
+    <script src="script-juego.js"></script>    
 </body>
 </html>

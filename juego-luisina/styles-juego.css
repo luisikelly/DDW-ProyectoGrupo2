@@ -10,33 +10,13 @@ header{
     padding: 0px; /* Añadido espacio alrededor de la barra de navegación */
 }
 
-#wrapper {
-    height: 100vh;
+main {
+    flex: 1; /* El contenedor principal toma todo el espacio disponible */
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
- }
- 
- #game {
-    height: 100vh;
-    max-height: 700px;
-    display: flex;
-    flex-wrap:wrap;
-    align-items: center;
-    justify-content: center;
- }
- 
- #stats {
-    color:#67BE9B;
-    position: absolute;
-    padding: 1rem;
-    text-align: center;
-    width: calc(100% - 2rem);
-    font-size: 2rem;
- }
- 
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
  .barra {
     background-color: #ffffff;
     display: flex; /* Utilizamos flexbox para alinear elementos */
@@ -71,7 +51,23 @@ header{
     font-size:25 px ; /* Tamaño del botón */
     align-items:center; /* Centramos verticalmente los elementos */
 }
-    
+.actions button {
+    font-family: Kanit, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    background-color: rgba(103, 190, 155, 0.8);
+    border: none;
+    border-radius: 10px; /* Borde redondeado individual para cada botón */
+    /*margin-bottom: 10px; /* Agregado espacio inferior para evitar superposiciones */
+    margin-right: 10px; /* Modificado para un mejor ajuste en dispositivos móviles */
+    padding: 10px 20px; /* Establece el relleno del botón */
+    height: 40px;
+    align-items:center; /* Centramos verticalmente los elementos */
+    justify-content: center;
+    box-shadow: 0 2px 4px #00000094; /* Sombra con color blanco */
+    color: white;
+}
 .nav-link-red {
     display: flex;
     background-color: rgba(240, 65, 88, 0.8);
@@ -94,11 +90,18 @@ header{
 
 }
 
+.score-title{
+    font-weight: bolder;
 
+}
+.score-title, .score{
+    font-size: 20px;
+    color:#767272;
+}
 .banner {
     position: relative;
     width: 100%;
-    height: 200px; /* Ajusta la altura según sea necesario */
+    height: 150px; /* Ajusta la altura según sea necesario */
     overflow: hidden;
 }
 
@@ -128,8 +131,10 @@ header{
 
 .barra-juego{
     border:4px solid #67BE9B;
-    
+    width: 100%;
 }
+
+
 
 .espacio-juego{
     background-color: #fcfcd7;
@@ -137,42 +142,62 @@ header{
     height: 500px;
 }
 
- .card {
-    width: 100px;
-    height: 140px;
-    margin: 1rem;
-    position: relative;
-    transition: transform 0.5s;
-    transform-style: preserve-3d;
- }
- 
- .card.active {
-    transform: rotateY(180deg);
- }
- 
- .card div {
-    width: 100%;
-    height: 100%;
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
+
+
+.grid-container {
+    margin-top: 5px;
+  display: grid;
+  justify-content: center;
+  grid-gap: 16px;
+  grid-template-columns: repeat(6, 120px);
+  grid-template-rows: repeat(2, calc(120px / 2 * 2));
+}
+
+.card {
+  height: 120px;
+  width: 120px;
+  border-radius: 6px;
+  background-color: white;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+
+.front-image {
+  width: 100%;
+  height: 100%;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
     backface-visibility: hidden;
-    pointer-events: none;
- }
- 
- .card .face {
-    background: #05d1fe;
-    transform: rotateY( 180deg );
-    color: black;
-    font-size: 6rem;
- }
- 
- .card .back {
-    border: 3px solid #05d1fe;
-    background: url(images/back.png) center / contain no-repeat;
- }
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .back {
+  background-image: url(img/back.png);
+  background-position: center center;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  transform: rotateY(180deg);
+}
 
 footer {
     background-color: #67BE9B;
@@ -184,3 +209,105 @@ footer {
     opacity: 0.75; /* Ajusta el nivel de transparencia según tu preferencia */
     color: #ffffff;
 }
+
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        background-color: transparent;
+        left: 0;
+        top: 0;
+        height: 30px;
+        width: 30px;
+        padding: 20px 20px;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-transition: -webkit-transform 0.25s
+          cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        z-index: 1002;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .hamburger.is-active {
+        background-color: none;
+      }
+      ._layer {
+        margin-bottom: 4px;
+        border-radius: 2px;
+        width: 28px;
+        height: 4px;
+        opacity: 1;
+      }
+      .-top{
+        background-color: #67be9b;
+      }
+      .-mid{
+        background-color: #f1db42;
+      }
+
+      .-bottom{
+        background-color: #f04158;
+      }
+
+      .menuppal.is_active {
+        transform: translate3d(0px, 0px, 0px);
+      }
+      .menuppal {
+        display: flex;
+        background-color: #fcfcd7;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        transform: translate3d(0px, -100%, 0px);
+        transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+        width: 100%;
+        z-index: 1001;
+      }
+      .botones {
+        flex-direction: column;
+        align-items: center;
+        justify-content: top;
+        margin: 35%;
+        padding: 0;
+      }
+      .menuppal ul li, .menuppal ul button {
+        list-style: none;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 3em;
+        height: 3em;
+        color: #ffffff;
+        text-transform: none;
+        font-weight: bold;
+        }
+
+        .titulo{
+          font-size: 20px;
+        }
+        .banner{
+          height: 100px;
+        }
+        .espacio-juego{
+          height: 600px;
+        }
+        .grid-container{
+            width: 100%;
+            margin-top: 2px;
+            display: grid;
+            justify-content: center;
+            grid-gap: 8px;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(2, calc(100px / 2 * 2));
+        }
+        .card{
+            height: 80px;
+            width: 80px;
+        }
+}
+
