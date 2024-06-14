@@ -1,38 +1,38 @@
 [
     {
-        "image": "juego-luisina/img/card1.png",
+        "image": "img/card1.png",
         "name": "card1"
     },
     {
-        "image": "juego-luisina/img/card2.png",
+        "image": "img/card2.png",
         "name": "card2"
     },
     {
-        "image": "juego-luisina/img/card3.png",
+        "image": "img/card3.png",
         "name": "card3"
     },
     {
-        "image": "juego-luisina/img/card4.png",
+        "image": "img/card4.png",
         "name": "card4"
     },
     {
-        "image": "juego-luisina/img/card5.png",
+        "image": "img/card5.png",
         "name": "card5"
     },
     {
-        "image": "juego-luisina/img/card6.png",
+        "image": "img/card6.png",
         "name": "card6"
     },
     {
-        "image": "juego-luisina/img/card7.png",
+        "image": "img/card7.png",
         "name": "card7"
     },
     {
-        "image": "juego-luisina/img/card8.png",
+        "image": "img/card8.png",
         "name": "card8"
     },
     {
-        "image": "juego-luisina/img/card9.png",
+        "image": "img/card9.png",
         "name": "card9"
     }
 ]
