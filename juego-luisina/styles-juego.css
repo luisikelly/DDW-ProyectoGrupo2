@@ -215,7 +215,10 @@ footer {
   .izquierda h1{
     font-size: 16px;
   }
-    .hamburger {
+  .score-title, .score{
+    font-size: 14px;
+} 
+  .hamburger {
         display: block;
         background-color: transparent;
         left: 0;
