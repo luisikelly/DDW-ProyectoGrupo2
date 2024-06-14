@@ -275,6 +275,11 @@ footer {
         justify-content: top;
         margin: 35%;
         padding: 0;
+        margin-bottom: 5px;
+      }
+
+      .botones li button, .botones li a{
+        height: 30px ;
       }
       .menuppal ul li, .menuppal ul button {
         list-style: none;
@@ -309,5 +314,6 @@ footer {
             height: 80px;
             width: 80px;
         }
+        
 }
 

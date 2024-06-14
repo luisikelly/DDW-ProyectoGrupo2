@@ -254,19 +254,26 @@ main {
         text-transform: none;
         font-weight: bold;
     }
+    .titulo{
+        font-size: 30px;
+    }
+    .banner{
+        height: 200px;
+    }
     .projectCard {
+        height: 300px;
         flex-direction: column; /* Cambia la dirección del flex a columna en pantallas pequeñas */
         align-items: center; /* Centra los elementos horizontalmente */
     }
     .infoTitle{
-        font-size: 30px;
+        font-size: 20px;
         margin-bottom: 2px;
     }
     .info p{
-        font-size: 20px;
+        font-size: 14px;
     }
     .logoUADE{
-        width: 200px;
+        width: 150px;
         height: auto;
     }
 }

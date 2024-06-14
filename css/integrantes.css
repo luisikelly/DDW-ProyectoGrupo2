@@ -227,14 +227,26 @@ header{
         text-transform: none;
         font-weight: bold;
     }
+    .titulo{
+        font-size: 30px;
+    }
+    .banner{
+        height: 200px;
+    }
     .tarjetas {
         flex-direction: column; /* Apila las tarjetas verticalmente */
         align-items: center; /* Centra las tarjetas horizontalmente */
     }
 
     .memberCard {
-        width: 100%; /* Las tarjetas ocuparán el ancho completo del contenedor */
+        height: 400px;
+        font-size: 20px;
+        width: 60%; /* Las tarjetas ocuparán el ancho completo del contenedor */
         max-width: none; /* Elimina la restricción de ancho máximo */
+    }
+
+    .memberCard img{
+        height: 200px;
     }
 }
 

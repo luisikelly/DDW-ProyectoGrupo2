@@ -256,13 +256,19 @@ footer {
       text-transform: none;
       font-weight: bold;
   }
+  .titulo{
+    font-size: 30px;
+}
+.banner{
+    height: 200px;
+}
   .tarjetas {
       flex-direction: column; /* Apila las tarjetas verticalmente */
       align-items: center; /* Centra las tarjetas horizontalmente */
   }
 
   .memberCard {
-    height: 50px;  
+    height: 100px;  
     width: 100%; /* Las tarjetas ocuparán el ancho completo del contenedor */
       max-width: none; /* Elimina la restricción de ancho máximo */
   }
