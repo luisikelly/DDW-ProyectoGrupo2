@@ -41,6 +41,7 @@ header{
     color:#F5F5F5;
     font-size:30 px ; /* Tamaño del botón */
     align-items:center; /* Centramos verticalmente los elementos */
+    list-style: none;
 }
     
 .nav-link-green {
