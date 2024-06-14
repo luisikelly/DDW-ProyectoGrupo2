@@ -221,6 +221,9 @@ details {
 }
 
 @media (max-width: 768px) { /* Ajusta según el tamaño de pantalla deseado */
+  .izquierda h1{
+    font-size: 16px;
+  }
     .hamburger {
         display: block;
         background-color: transparent;
