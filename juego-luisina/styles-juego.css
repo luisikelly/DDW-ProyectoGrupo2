@@ -210,6 +210,21 @@ footer {
     color: #ffffff;
 }
 
+.tittle-modal{
+  font-size: 20px !important;
+}
+.button-modal{
+  font-family: Kanit, sans-serif;
+  background-color: #67BE9B!important; /* Cambia el color a tu preferencia */
+  color: #F5F5F5 !important; /* Cambia el color del texto si es necesario */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  
+}
+
 
 @media (max-width: 768px) {
   .izquierda h1{

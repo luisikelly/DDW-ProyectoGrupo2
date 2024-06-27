@@ -41,6 +41,7 @@ header{
     color:#F5F5F5;
     font-size:30 px ; /* Tamaño del botón */
     align-items:center; /* Centramos verticalmente los elementos */
+    list-style: none;
 }
     
 .nav-link-green {
@@ -216,9 +217,9 @@ header{
         justify-content: top;
         margin: 35%;
         padding: 0;
+        list-style: none;
       }
       .menuppal ul li {
-        list-style: none;
         text-align: center;
         font-size: 1.5rem;
         line-height: 3em;
@@ -226,6 +227,7 @@ header{
         color: #ffffff;
         text-transform: none;
         font-weight: bold;
+        
     }
     .titulo{
         font-size: 30px;

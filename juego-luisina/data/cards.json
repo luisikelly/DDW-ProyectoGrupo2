@@ -1,38 +1,38 @@
 [
     {
         "image": "juego-luisina/img/card1.png",
-        "name": "card1"
+        "name": "Cruce ferroviario"
     },
     {
         "image": "juego-luisina/img/card2.png",
-        "name": "card2"
+        "name": "Calzada resvaladiza"
     },
     {
         "image": "juego-luisina/img/card3.png",
-        "name": "card3"
+        "name": "Contramano"
     },
     {
         "image": "juego-luisina/img/card4.png",
-        "name": "card4"
+        "name": "No Estacionar"
     },
     {
         "image": "juego-luisina/img/card5.png",
-        "name": "card5"
+        "name": "No girar en U"
     },
     {
         "image": "juego-luisina/img/card6.png",
-        "name": "card6"
+        "name": "Pare"
     },
     {
         "image": "juego-luisina/img/card7.png",
-        "name": "card7"
+        "name": "Fin de autopista"
     },
     {
         "image": "juego-luisina/img/card8.png",
-        "name": "card8"
+        "name": "Camino sinuoso"
     },
     {
         "image": "juego-luisina/img/card9.png",
-        "name": "card9"
+        "name": "Hombres trabajando"
     }
 ]
