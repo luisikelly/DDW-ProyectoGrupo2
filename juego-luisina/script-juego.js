@@ -1,20 +1,18 @@
-
 const gridContainer = document.querySelector(".grid-container");
 let cards = [];
 let firstCard, secondCard;
 let lockBoard = false;
 let score = 0;
 
-
 document.querySelector(".score").textContent = score;
 
 fetch("./juego-luisina/data/cards.json")
-.then((res) => res.json())
-.then((data) => {
-  cards = [...data, ...data];
-  shuffleCards();
-  generateCards();
-});
+  .then((res) => res.json())
+  .then((data) => {
+    cards = [...data, ...data];
+    shuffleCards();
+    generateCards();
+  });
 
 function shuffleCards() {
   let currentIndex = cards.length,
@@ -66,29 +64,29 @@ function flipCard() {
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.name === secondCard.dataset.name;
-  
+
   isMatch ? disableCards() : unflipCards();
-  
 }
 
 function disableCards() {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
- 
+
   Swal.fire({
-    title: 'Señal: '+firstCard.dataset.name,
-    text: '¡Encontraste una coincidencia!',
+    title: 'Señal encontrada: ' + firstCard.dataset.name,
     imageUrl: firstCard.querySelector('.front-image').src,
     imageWidth: 300,
     imageHeight: 300,
     imageAlt: 'Imagen de la carta',
     confirmButtonText: 'Continuar',
     customClass: {
-      title: 'modal-tittle',
       confirmButton: 'button-modal',
+      title:'tittle-modal'
     },
+  }).then(() => {
+    checkGameEnd();
   });
- 
+
   resetBoard();
 }
 
@@ -100,14 +98,27 @@ function unflipCards() {
   }, 1000);
 }
 
-
-
 function resetBoard() {
   firstCard = null;
   secondCard = null;
   lockBoard = false;
 }
 
+function checkGameEnd() {
+  const flippedCards = document.querySelectorAll('.card.flipped');
+  if (flippedCards.length === cards.length) {
+    Swal.fire({
+      title: '¡Juego Terminado!',
+      text: `Tu puntaje final es: ${score}`,
+      confirmButtonText: 'Reiniciar',
+      customClass: {
+        confirmButton: 'button-modal',
+      },
+    }).then(() => {
+      restart();
+    });
+  }
+}
 
 function restart() {
   resetBoard();
