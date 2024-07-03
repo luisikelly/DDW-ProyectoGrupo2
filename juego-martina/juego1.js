@@ -135,6 +135,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const selectedAnswer = event.target.getAttribute('data-answer');
             const isCorrect = event.target.getAttribute('data-correct') === 'true';
 
+            if (isCorrect) {
+                correctAnswers++;
+            }
+
             mostrarResultado(isCorrect);
 
             // Mostrar resultado y avanzar a la siguiente pregunta después de 2 segundos
