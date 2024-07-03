@@ -1,90 +1,162 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let correctAnswers = 0; // Contador de respuestas correctas
-    const totalQuestions = document.querySelectorAll('.contenedor_de_juego > div').length;
-    let playerName = '';
+    const preguntas = [
+        {
+            pregunta: 'Curva Pronunciada',
+            respuestas: [
+                { imgSrc: 'curva.png', answer: false },
+                { imgSrc: 'camino_sinuoso.png', answer: false },
+                { imgSrc: 'curva_pronunciada.png', answer: true },
+                { imgSrc: 'calzada_dividida.png', answer: false }
+            ]
+        },
+        {
+            pregunta: 'No estacionar',
+            respuestas: [
+                { imgSrc: 'estacionamiento_exclusivo.png', answer: false },
+                { imgSrc: 'no_estacionar.png', answer: true },
+                { imgSrc: 'no_estacionar_no_detenerse.png', answer: false },
+                { imgSrc: 'transito_pesado_derecha.png', answer: false }
+            ]
+        },
+        {
+            pregunta: 'Cruce Ferroviario',
+            respuestas: [
+                { imgSrc: 'puente_movil.png', answer: false },
+                { imgSrc: 'tunel.png', answer: false },
+                { imgSrc: 'tranvia.png', answer: false },
+                { imgSrc: 'cruce_ferroviario.png', answer: true }
+            ]
+        },
+        {
+            pregunta: 'Animales Sueltos (silvestres)',
+            respuestas: [
+                { imgSrc: 'prohibido_circular_arreos.png', answer: false },
+                { imgSrc: 'animales_sueltos_domestico.png', answer: false },
+                { imgSrc: 'animales_sueltos_silvestre.png', answer: true },
+                { imgSrc: 'jinetes.png', answer: false }
+            ]
+        }
+    ];
 
-    // Crear y agregar el div para los mensajes flotantes
-    const messageDiv = document.createElement('div');
-    messageDiv.style.position = 'fixed';
-    messageDiv.style.top = '20px';
-    messageDiv.style.right = '20px';
-    messageDiv.style.padding = '10px';
-    messageDiv.style.backgroundColor = 'rgba(0,0,0,0.7)';
-    messageDiv.style.color = 'white';
-    messageDiv.style.borderRadius = '5px';
-    messageDiv.style.zIndex = '1000';
-    messageDiv.style.display = 'none';
-    messageDiv.style.fontSize = '35px'; // Aumenta el tamaño de la fuente
-    document.body.appendChild(messageDiv);
+    let currentQuestionIndex = 0;
+    let correctAnswers = 0;
+    const totalQuestions = preguntas.length;
+    const preguntaActualElement = document.getElementById('pregunta-actual');
+    const totalPreguntasElement = document.getElementById('total-preguntas');
+    const resultadoElement = document.getElementById('resultado');
+    const contenedorDeJuego = document.querySelector('.contenedor_de_juego');
+    const modal = document.getElementById('modal');
+    const playerNameInput = document.getElementById('player-name');
+    const startGameButton = document.getElementById('start-game');
+    const closeModalButton = document.querySelector('.close-button');
 
-    // Función para mostrar mensaje
-    function showMessage(message) {
-        messageDiv.textContent = message;
-        messageDiv.style.display = 'block';
-        setTimeout(() => {
-            messageDiv.style.display = 'none';
-        }, 2000);
+    startGameButton.addEventListener('click', function() {
+        const playerName = playerNameInput.value.trim();
+        if (playerName !== '') {
+            modal.style.display = 'none';
+            iniciarJuego(playerName);
+        } else {
+            alert('Por favor, ingresa tu nombre para comenzar el juego.');
+        }
+    });
+
+    function iniciarJuego(playerName) {
+        mostrarPregunta();
+        totalPreguntasElement.textContent = totalQuestions;
+        actualizarContadorPreguntas();
     }
 
-    // Obtener elementos del modal
-    const modal = document.getElementById('modal');
-    const closeButton = document.querySelector('.close-button');
-    const startGameButton = document.getElementById('start-game');
-    const playerNameInput = document.getElementById('player-name');
+    function mostrarPregunta() {
+        const pregunta = preguntas[currentQuestionIndex];
+        preguntaActualElement.innerHTML = `
+            <h2>${pregunta.pregunta}</h2>
+            <div class="images-container">
+                ${pregunta.respuestas.map((respuesta, index) => `
+                    <img src="${respuesta.imgSrc}" alt="Señal ${index + 1}" class="signal-image" data-answer="${index}" data-correct="${respuesta.answer ? 'true' : 'false'}">
+                `).join('')}
+            </div>
+        `;
+    }
 
-    // Mostrar el modal al cargar la página
+    function mostrarResultado(esCorrecta) {
+        const images = document.querySelectorAll('.signal-image');
+        images.forEach(image => {
+            const isCorrect = image.getAttribute('data-correct') === 'true';
+            if (isCorrect && esCorrecta) {
+                image.classList.add('correct-answer');
+            } else if (!isCorrect && !esCorrecta) {
+                image.classList.add('incorrect-answer');
+            }
+        });
+    }
+
+    function avanzarPregunta() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < totalQuestions) {
+            mostrarPregunta();
+            resultadoElement.innerHTML = ''; // Limpiar el resultado anterior
+            actualizarContadorPreguntas();
+        } else {
+            finDelJuego();
+        }
+    }
+
+    function actualizarContadorPreguntas() {
+        document.getElementById('pregunta-actual-numero').textContent = currentQuestionIndex + 1;
+    }
+
+    function finDelJuego() {
+        preguntaActualElement.innerHTML = '<h2>¡Has completado todas las preguntas!</h2>';
+        resultadoElement.innerHTML = `<p>Respuestas correctas: ${correctAnswers} de ${totalQuestions}</p>`;
+        const restartButton = document.createElement('button');
+        restartButton.textContent = 'Jugar de Nuevo';
+        restartButton.classList.add('restart-button');
+        restartButton.addEventListener('click', () => {
+            resetearJuego();
+        });
+        contenedorDeJuego.appendChild(restartButton);
+    }
+
+    function resetearJuego() {
+        currentQuestionIndex = 0;
+        correctAnswers = 0;
+        mostrarPregunta();
+        resultadoElement.innerHTML = '';
+        actualizarContadorPreguntas();
+        const restartButton = document.querySelector('.restart-button');
+        if (restartButton) {
+            restartButton.remove();
+        }
+    }
+
+    // Event listener para las respuestas
+    preguntaActualElement.addEventListener('click', function(event) {
+        if (event.target.matches('.signal-image')) {
+            const selectedAnswer = event.target.getAttribute('data-answer');
+            const isCorrect = event.target.getAttribute('data-correct') === 'true';
+
+            mostrarResultado(isCorrect);
+
+            // Mostrar resultado y avanzar a la siguiente pregunta después de 2 segundos
+            setTimeout(() => {
+                mostrarResultado(false); // Limpiar clases de respuesta anterior
+                avanzarPregunta();
+            }, 2000);
+        }
+    });
+
+    // Modal de inicio de juego
     modal.style.display = 'block';
 
-    // Cerrar el modal cuando se hace clic en la X
-    closeButton.addEventListener('click', () => {
+    // Cerrar modal al hacer click en la X
+    closeModalButton.addEventListener('click', function() {
         modal.style.display = 'none';
     });
 
-    // Iniciar el juego cuando se hace clic en el botón "Comenzar"
-    startGameButton.addEventListener('click', () => {
-        playerName = playerNameInput.value.trim();
-        if (playerName) {
+    // Cerrar modal al hacer click fuera de él
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
             modal.style.display = 'none';
-        } else {
-            alert('Por favor, ingresa tu nombre.');
         }
-    });
-
-    // Función para verificar la respuesta
-    function checkAnswer(event) {
-        const isCorrect = event.target.getAttribute('data-correct') === 'true';
-        const questionDiv = event.target.closest('div.pregunta1, div.pregunta2, div.pregunta3, div.pregunta4');
-        
-        if (questionDiv && !questionDiv.classList.contains('answered')) {
-            if (isCorrect) {
-                correctAnswers++;
-                event.target.classList.add('correct-answer');
-                showMessage('¡Correcto!');
-            } else {
-                event.target.classList.add('incorrect-answer');
-                showMessage('Incorrecto');
-            }
-            questionDiv.classList.add('answered');
-            if (document.querySelectorAll('.answered').length === totalQuestions) {
-                setTimeout(() => {
-                    modal.style.display = 'block';
-                    document.querySelector('.modal-content').innerHTML = `
-                        <span class="close-button">&times;</span>
-                        <h2>¡Juego Terminado!</h2>
-                        <p>${playerName}, has acertado ${correctAnswers} de ${totalQuestions} preguntas.</p>
-                        <button onclick="window.location.reload()">Reiniciar</button>
-                    `;
-                    document.querySelector('.close-button').addEventListener('click', () => {
-                        modal.style.display = 'none';
-                    });
-                }, 500);
-            }
-        }
-    }
-
-    // Agregar event listener a todas las imágenes
-    const images = document.querySelectorAll('.signal-image');
-    images.forEach(image => {
-        image.addEventListener('click', checkAnswer);
     });
 });
