@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             pregunta: 'Curva Pronunciada',
             respuestas: [
-                { imgSrc: 'curva.png', answer: false },
+                { imgSrc: 'juego-martina/curva.png', answer: false },
                 { imgSrc: 'camino_sinuoso.png', answer: false },
                 { imgSrc: 'curva_pronunciada.png', answer: true },
                 { imgSrc: 'calzada_dividida.png', answer: false }
