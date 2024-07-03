@@ -4,36 +4,36 @@ document.addEventListener('DOMContentLoaded', function() {
             pregunta: 'Curva Pronunciada',
             respuestas: [
                 { imgSrc: 'juego-martina/curva.png', answer: false },
-                { imgSrc: 'camino_sinuoso.png', answer: false },
-                { imgSrc: 'curva_pronunciada.png', answer: true },
-                { imgSrc: 'calzada_dividida.png', answer: false }
+                { imgSrc: 'juego-martina/camino_sinuoso.png', answer: false },
+                { imgSrc: 'juego-martina/curva_pronunciada.png', answer: true },
+                { imgSrc: 'juego-martina/calzada_dividida.png', answer: false }
             ]
         },
         {
             pregunta: 'No estacionar',
             respuestas: [
-                { imgSrc: 'estacionamiento_exclusivo.png', answer: false },
-                { imgSrc: 'no_estacionar.png', answer: true },
-                { imgSrc: 'no_estacionar_no_detenerse.png', answer: false },
-                { imgSrc: 'transito_pesado_derecha.png', answer: false }
+                { imgSrc: 'juego-martina/estacionamiento_exclusivo.png', answer: false },
+                { imgSrc: 'juego-martina/no_estacionar.png', answer: true },
+                { imgSrc: 'juego-martina/no_estacionar_no_detenerse.png', answer: false },
+                { imgSrc: 'juego-martina/transito_pesado_derecha.png', answer: false }
             ]
         },
         {
             pregunta: 'Cruce Ferroviario',
             respuestas: [
-                { imgSrc: 'puente_movil.png', answer: false },
-                { imgSrc: 'tunel.png', answer: false },
-                { imgSrc: 'tranvia.png', answer: false },
-                { imgSrc: 'cruce_ferroviario.png', answer: true }
+                { imgSrc: 'juego-martina/puente_movil.png', answer: false },
+                { imgSrc: 'juego-martina/tunel.png', answer: false },
+                { imgSrc: 'juego-martina/tranvia.png', answer: false },
+                { imgSrc: 'juego-martina/cruce_ferroviario.png', answer: true }
             ]
         },
         {
             pregunta: 'Animales Sueltos (silvestres)',
             respuestas: [
-                { imgSrc: 'prohibido_circular_arreos.png', answer: false },
-                { imgSrc: 'animales_sueltos_domestico.png', answer: false },
-                { imgSrc: 'animales_sueltos_silvestre.png', answer: true },
-                { imgSrc: 'jinetes.png', answer: false }
+                { imgSrc: 'juego-martina/prohibido_circular_arreos.png', answer: false },
+                { imgSrc: 'juego-martina/animales_sueltos_domestico.png', answer: false },
+                { imgSrc: 'juego-martina/animales_sueltos_silvestre.png', answer: true },
+                { imgSrc: 'juego-martina/jinetes.png', answer: false }
             ]
         }
     ];
