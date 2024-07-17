@@ -24,4 +24,3 @@ let basepreguntas = [
         distractores: ["Las luces altas", "Luces de posición", "Todas a la vez"]
     }
 ];
-
