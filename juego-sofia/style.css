@@ -168,7 +168,7 @@ main {
     background-color: #67BE9B;
     text-align: center; /* Centrar el texto horizontalmente */
     padding: 5px 0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Añadir una ligera sombra para la separación visual */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); 
     width: 100%; /* Asegura que el footer ocupe el ancho completo */
     font-size: 14px; /* Ajustar el tamaño de la letra si es necesario */
     opacity: 0.75; /* Ajusta el nivel de transparencia según tu preferencia */
