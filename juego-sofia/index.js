@@ -1,6 +1,6 @@
 Swal.fire({
     title: "¡Bienvenido a Trivia Vial!",
-    text: "Respondé la trivia correctamente y estarás listo para obtener tu licencia de conducir!",
+    text: "Respondé la trivia de 4 preguntas correctamente y estarás listo para obtener tu licencia de conducir!",
 }).then(() => {
     // Mostrar el contenido del juego
     document.getElementById('content').classList.remove('hidden');
@@ -35,6 +35,8 @@ function cargar_pregunta(index) {
     document.getElementById("btn2").innerHTML = opciones[1];
     document.getElementById("btn3").innerHTML = opciones[2];
     document.getElementById("btn4").innerHTML = opciones[3];
+    
+    document.getElementById("nro-pregunta").innerHTML = `Pregunta ${index + 1}/4`;
 }
 
 async function seleccionarOpcion(index) {
