@@ -3,7 +3,11 @@ body {
     background-color: #FCFCD7;
     margin: 0;
     font-family: 'Kanit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 
 header {
     background-color: #ffffff;
@@ -76,6 +80,8 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 20px; /* Espacio alrededor del contenido principal */
+    width: 100%; /* Asegura que el main ocupe el ancho completo */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
 }
 
 .hidden {
@@ -83,13 +89,17 @@ main {
 }
 
 .tablero {
+    gap: 40px;
     display: flex;
-    flex-direction: column;
+    height: 80%; 
+    width:80%/* Alto fijo para el tablero */
+    /*flex-direction: column;
+    justify-content: space-between;
     max-width: 600px; /* Ancho máximo para el tablero */
-    width: 100%; /* Ajuste al 100% del contenedor */
-    margin: auto;
+    /*width: 90%; /* Ajuste al 100% del contenedor */
+    /*margin: auto;
     margin-top: 1%;
-    padding: 0 10px; /* Espaciado alrededor del tablero */
+    padding: 20px 10px; /* Espaciado alrededor del tablero */
 }
 
 .encabezado {
@@ -100,14 +110,14 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-width: 300px;
-    width: 100%; /* Ajuste al 100% del contenedor */
-    max-width: 600px; /* Ancho máximo */
+    /*min-width: 300px;*/
+    /*width: calc(50% - 10px); /* Ajuste dinámico de ancho */
+    /*max-width: 45%; /* Limita el ancho máximo */
     padding: 20px;
-    margin: 10px;
     border-radius: 15px;
     text-align: center; /* Alineación centrada para el texto */
 }
+
 
 .pregunta {
     font-size: 20px;
@@ -122,12 +132,23 @@ main {
     box-shadow: 0px 1px 10px 1px #0d0d0d;
 }
 
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap: 30px; /* Espaciado entre botones */
+    width: calc(50% - 10px); /* Ajuste dinámico de ancho */
+    max-width: 45%; /* Limita el ancho máximo */
+}
+
+
 .btn {
     background-color: #F04158;
     width: 100%;
-    max-width: 390px;
-    padding: 4%;
-    margin: 10px auto; /* Centra los botones horizontalmente */
+    max-width: 100%;
+    padding: 10px; /* Ajusta el padding según sea necesario */
     border-radius: 15px;
     display: flex;
     color: hsl(0, 11%, 22%);
@@ -137,6 +158,7 @@ main {
     text-align: left;
 }
 
+
 .btn:hover {
     background: #F1DB42;
     cursor: pointer;
@@ -144,13 +166,16 @@ main {
 
 .footer {
     background-color: #67BE9B;
-    width: 100%;
-    overflow: hidden;
-    padding: 10px;
-    text-align: center;
-    color: #F5F5F5;
-    font-size: 15px;
-}
+    text-align: center; /* Centrar el texto horizontalmente */
+    padding: 5px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Añadir una ligera sombra para la separación visual */
+    width: 100%; /* Asegura que el footer ocupe el ancho completo */
+    font-size: 14px; /* Ajustar el tamaño de la letra si es necesario */
+    opacity: 0.75; /* Ajusta el nivel de transparencia según tu preferencia */
+    color: #ffffff;
+    }
+
+
 
 /* Estilos Responsivos */
 @media (max-width: 768px) {
@@ -182,9 +207,15 @@ main {
     .botones {
         font-size: 20px;
         margin-top: 10px;
-        flex-direction: column; /* Disposición en columna para los botones */
         align-items: center;
+        width: 100%;
+
     }
+    .btn {
+        width: 100%; /* Asegura que los botones ocupen el ancho completo */
+        margin: 10px auto; /* Centra los botones horizontalmente */
+    }
+    
 
     .nav-link-green {
         margin: 10px 0; /* Espaciado alrededor de los botones */
@@ -199,7 +230,8 @@ main {
     .tablero {
         margin-right: 0; /* Ajusta el margen */
         padding: 0;
-        max-width: 100%; /* Ancho completo */
+        max-width: 90%; /* Ancho completo */
+        flex-direction: column;
     }
 
     .encabezado {
@@ -208,15 +240,10 @@ main {
         padding: 10px;
         max-width: 100%; /* Ancho completo */
     }
-
-    .btn {
-        margin: 10px auto; /* Centra los botones horizontalmente */
-    }
+ 
 
     .footer {
         font-size: 12px; /* Tamaño de fuente más pequeño */
         padding: 10px 5px; /* Reduce padding */
     }
 }
-
-    
