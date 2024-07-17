@@ -19,7 +19,7 @@ let basepreguntas = [
     },
     {
         pregunta: "En circulación nocturna, ¿qué luces deben utilizarse?",
-        imagen: "https://i.ibb.co/1QQzs2z/mandodeluces.jpeg",
+        imagen: "https://i.ibb.co/1QQzs2z/mandodeluces.jpg",
         respuesta: "Las luces bajas",
         distractores: ["Las luces altas", "Luces de posición", "Todas a la vez"]
     }
