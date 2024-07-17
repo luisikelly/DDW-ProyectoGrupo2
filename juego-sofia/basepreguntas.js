@@ -9,13 +9,13 @@ let basepreguntas = [
         pregunta: "¿Qué indica la señal que se presenta?",
         imagen: "https://i.ibb.co/88b6b4F/transitopesado.jpg",
         respuesta: "Tránsito pesado a la derecha",
-        distractores: ["Circulación exclusiva de camiones", "Sobrepasos por la derecha", "Carril de emergencia para vehículos"]
+        distractores: ["Circulación exclusiva de camiones", "Sobrepasos por la derecha", "Ninguna es correcta"]
     },
     {
         pregunta: "Determine qué representa esta señal:",
         imagen: "https://i.ibb.co/bRTwSbw/PEATON.jpg",
-        respuesta: "Advertencia de cruce de peatones",
-        distractores: ["Advertencia de cruce escolar", "Advertencia de inicio de maratón", "Advertencia de lugar para realizar ejercicios de caminata."]
+        respuesta: "Cruce de peatones",
+        distractores: ["Cruce escolar", "Prohibición de cruzar la calzada para peatones", "Advertencia de senda peatonal a 500 metros."]
     },
     {
         pregunta: "En circulación nocturna, ¿qué luces deben utilizarse?",
@@ -24,3 +24,4 @@ let basepreguntas = [
         distractores: ["Las luces altas", "Luces de posición", "Todas a la vez"]
     }
 ];
+
